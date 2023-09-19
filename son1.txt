@@ -1,9 +1,1 @@
-Nguyen Hung SOn
-
-develop commit 1
-
-
-develop commit 2
-
-endu
-f
+Error from E-wallet partner [http://10.37.16.151:8143/vpbipn-senpay-link/vpbank/link] API for link wallet ID : [0357535712].Request ID [777cc01c-cd58-4120-8ee2-d6dadad4438c], Request Time [20230919143457].Status code [500 INTERNAL_SERVER_ERROR]. Error response [{"data":null,"hasError":true,"errorMessage":"C\u00F3 l\u1ED7i x\u1EA3y ra. Th\u1EED l\u1EA1i b\u1EA1n nh\u00E9.","errorCode":-1,"statusCode":500,"errorDetail":null}]
