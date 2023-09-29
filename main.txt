@@ -1,11 +1,1 @@
-Hien update giúp anh config này trên sit nhé
-
-OTP Thành công: https://dev-tkol-api.tikop.vn/v1/redirect/otp?status=SUCCESS
-OTP Thất bại: https://dev-tkol-api.tikop.vn/v1/redirect/otp?status=FAIL
-LOGIN:
-
-https://dev-tkol-api.tikop.vn/v1/redirect/login?status=SUCCESS
-
-https://dev-tkol-api.tikop.vn/v1/redirect/login?status=ERROR
-
-https://dev-tkol-api.tikop.vn/v1/redirect/login?status=CANCEl
+https://www.google.com/?code=64675304-eb74-351c-802f-eace7acf8390
