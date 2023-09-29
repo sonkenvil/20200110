@@ -1,1 +1,7 @@
-https://www.google.com/?code=64675304-eb74-351c-802f-eace7acf8390
+curl --location --request POST 'https://uat-ob-gatewaylb-ext.vpbank.com.vn:443/security/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Cookie: ca42ae6e372e662a50adc1c71fd34291=ca9375ff21c3e6a8c20c85679598bea9; linkCookie=RaC5wfTzjCFyAcvzlJ04hNxhc3Xzvcmb9Eh81D5Mx+0=; ca42ae6e372e662a50adc1c71fd34291=ca9375ff21c3e6a8c20c85679598bea9; linkCookie=RaC5wfTzjCFyAcvzlJ04hNxhc3Xzvcmb9Eh81D5Mx+0=; 4256ccdf406b711110bfcd7295a514f6=f7533ce33c51c800ce4db24a91f5fd50; ca42ae6e372e662a50adc1c71fd34291=e6ba2600088bdceb0ac2684becef3ef8; linkCookie=Xy/CzgRM0o9gZt1UqAWCxs/+IsfibnFs9SUNSn/khzc=' \
+--header 'Authorization: Basic VUVqU0Y0VXZrTnBOWFBTekFjQnlMcTZMRzlzYTpPcHM4emNEdWViV0xxVzVLd19sMXBYZ2FmZmdh' \
+--data-urlencode 'grant_type=authorization_code' \
+--data-urlencode 'code=f21551c6-6314-3bb0-9a2d-c112ac077605' \
+--data-urlencode 'redirect_uri=https://www.google.com'
