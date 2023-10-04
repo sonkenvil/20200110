@@ -1,11 +1,1 @@
-curl --location 'https://bankdev.nhanh.vn/webhooks/vpb/changebalance' \
---header 'Content-Type: application/json' \
---header 'Cookie: nvnKn0x6ac=3o3apiskjh7btr4097ini4d7ep; user-locale=vi-VN' \
---data '{
-    "requestId" : "123123123",
-    "accountNumber": "54703988",
-    "amount" : 2304000,
-    "currency": "VND",
-    "dateTime": "20230512",
-    "newMemo": "Thanh toán hóa đơn NVNO 36150701 34369"
-}'
+https://academy.vpbank.com.vn/learning/
