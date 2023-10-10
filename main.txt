@@ -1,9 +1,10 @@
-{
-    "legalId": "001196037223",
-    "accountNumber": "269750456",
-    "customerName": "NGUYEN MAI PHUONGGG",
-    "type": "STATEMENT",
-    "registerId": "99"
-}
-
-8986195/Vpbank#2023
+curl -X 'POST' \
+  'https://editor.swagger.io/v1.0/unlink' \
+  -H 'accept: */*' \
+  -H 'X-Request-ID: sonnh_test' \
+  -H 'X-Request-Time: 123456' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "walletId": "0901234567",
+  "reason": "123"
+}'
