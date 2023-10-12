@@ -1,7 +1,1 @@
-curl --location --request PUT 'http://vpb.vtcpay.vn:8063/VPBGate-Wallet-Sanbox/Unlink' \
---header 'Authorization: Basic VlRDUGF5OlZUQ1BheSVeJCMxOTIzMg==' \
---header 'Content-Type: application/json' \
---data '{
-    "walletId":"0704668680",
-    "reason":"123456"
-}'
+Error from E-wallet partner [http://esbxdatapower.vpbank.com.vn:8143/vpbipn-senpay-validate/vpbank/validate] API for validate customer info : [040191014068].Request ID [0c861192-1ad4-4aa7-b49e-38d06fdd6893], Request Time [20231012184507].Status code [400 BAD_REQUEST].
