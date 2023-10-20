@@ -1,1 +1,1 @@
-https://docs.google.com/spreadsheets/d/1bQW6pl5DZZ6KfaXBo5mzwzpuuNhNfwZb/edit?usp=share_link&ouid=112521772241672953060&rtpof=true&sd=true
+11:10:50.498 [channel-ewallet] [2.22.391] [] [db9cf9a12a7ce9bc] [bea064f9be7e3c7d] [taskExecutor-2] INFO  v.c.v.c.e.b.service.UnlinkService.unlinkEwalletPartner - Call partner[vtcpay] with [http://10.37.16.151:8142/vtcpay/VPBGateWalletSandbox/Unlink] Unlink API for wallet id [0965000009] with request ID [189af781-0ff3-45b8-b826-aa2bdf8b4aac] and request time [20231020111050]
