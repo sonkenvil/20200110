@@ -1,3 +1,1 @@
-@Minkhuee ơi giúp chị khi login môi trường UAT  
-Chị login vào VPB đang chặn: The requested URL was rejected. Please consult with your administrator.
-Your support ID is: 11321937407520964889
+http://10.37.16.22/jarvisapi/countries
