@@ -1,1 +1,1 @@
-http://10.37.16.22/jarvisapi/countries
+https://stackoverflow.com/questions/49650157/no-request-bound-thread-error
