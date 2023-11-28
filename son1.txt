@@ -1,1 +1,1 @@
-https://stackoverflow.com/questions/68499581/catch-all-requested-paths-in-springboot-restcontroller
+https://ewallet-webhook.ghtkpaylab.com/callback/vpbank/auth
