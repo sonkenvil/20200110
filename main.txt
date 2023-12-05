@@ -1,8 +1,1 @@
-curl --location 'https://uat-ob-gatewaylb-int.vpbank.com.vn:443/asc-delegations/payment/init' \
---header 'X-Request-Id: test_1234454500001' \
---header 'Authorization: Berear 40c9b36f-7ade-3afa-8ea8-1f70a4fb59f2' \
---header 'Content-Type: application/json' \
---data '{
-    "originalRequestId": "c09a9efa-5843-5986-b04e-0000002",
-    "secCompanyId": "ASC"
-}'
+40c9b36f-7ade-3afa-8ea8-1f70a4fb59f2
