@@ -1,4 +1,1 @@
-curl --location 'https://uat-ob-gatewaylb-int.vpbank.com.vn:443/security/token' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---header 'Authorization: Basic NVFRdlVrbDJneVFfQnRXUTJHWEVLY3ZtbGc0YTpKdm5kMjJ3WFhqUl9pS1dWaDV1VlNPX2EzeTBh' \
---data-urlencode 'grant_type=client_credentials'
+https://uat-ob-gatewaylb-ext.vpbank.com.vn:443/openui/login.do?relyingParty=UEjSF4UvkNpNXPSzAcByLq6LG9sa&state=10656395&sessionDataKey=8e4736e0-111d-4e75-b760-1c53f2438e24&sp=NHANHOrg_5b1346f3-05e2-42de-a649-d788f71906f4_PRODUCTION
