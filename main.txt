@@ -1,1 +1,4 @@
-40c9b36f-7ade-3afa-8ea8-1f70a4fb59f2
+curl --location 'https://uat-ob-gatewaylb-int.vpbank.com.vn:443/security/token' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--header 'Authorization: Basic NVFRdlVrbDJneVFfQnRXUTJHWEVLY3ZtbGc0YTpKdm5kMjJ3WFhqUl9pS1dWaDV1VlNPX2EzeTBh' \
+--data-urlencode 'grant_type=client_credentials'
