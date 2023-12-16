@@ -1,1 +1,1 @@
-11321937407573552810
+[http://esbxdatapower.vpbank.com.vn:8143/vpbsandboxpaydev-validate-wallet/wallet-api/bank/vpbank/v1.0/validate] API for validate customer info : [024189018611].Request ID [05ca190c-fb7a-4833-ac37-92211adabf1c], Request Time [20231216182852].Status code [404 NOT_FOUND].
