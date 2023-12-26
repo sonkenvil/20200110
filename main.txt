@@ -1,1 +1,1 @@
-Call partner [vnpt-media] with url=[http://esbxdatapower.vpbank.com.vn:8143/vpbsandboxpaydev-validate-wallet/wallet-api/bank/vpbank/v1.0/validate] to validate customer [{"legalId":"024189018611","customerName":"NGUYEN THI THU TRANG","phoneNumber":"0904828281"}] with request ID [0eb73549-b416-4d51-ad85-d37310519c99] and request time [20231216195740]
+[send] sessionId=7d31d14a-ffc6-4bfb-bbb5-ccb9742ca466 ===> 403 FORBIDDEN | Error to /webhooks/vpb/changebalance
