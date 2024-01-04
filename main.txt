@@ -1,1 +1,11 @@
-KNU6SztkdRaKdsU5j15ijsj9O3Ea/tNOY_Fqmw2_afMmyxe71C5ZLzTwa
+curl --location --request GET 'http://10.37.16.151:8129/accesstrade-ev-cashback/api/user/generate-auth-url' \
+--header 'Checksum: b403dac1837b7b1c8af7332f6c3cca0cd57d0a0c9e77ac68c76224d3713590ea' \
+--header 'Timestamp: 1704359847' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "userId": "004faf1a-e31d-46ba-8f79-1363024644c6",
+    "userName": "RSA",
+    "redirect": {
+        "type": "landing_voucher"
+    }
+}'
