@@ -1,11 +1,1 @@
-curl --location --request GET 'http://10.37.16.151:8129/accesstrade-ev-cashback/api/user/generate-auth-url' \
---header 'Checksum: b403dac1837b7b1c8af7332f6c3cca0cd57d0a0c9e77ac68c76224d3713590ea' \
---header 'Timestamp: 1704359847' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "userId": "004faf1a-e31d-46ba-8f79-1363024644c6",
-    "userName": "RSA",
-    "redirect": {
-        "type": "landing_voucher"
-    }
-}'
+{"custId":"000000001125","date":"16-01-2024","time":":00","location":"hzjzjz","development":"zbznzn","result":"zbbzzn","hospitalBeginDate":"16-01-2024","hospitalEndDate":":00","hospitalName":"","accidentTypes":["TU_VONG_MAT_TICH"],"contactName":"","contactPhone":"0399141339","contactEmail":"vpbcus8172346@gmail.com"} 
