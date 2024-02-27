@@ -1,1 +1,1 @@
-https://docs.hazelcast.com/tutorials/hazelcast-embedded-springboot#the-spring-boot-application-structure
+example, Infinispan, hazelcast or Apache Ignite
