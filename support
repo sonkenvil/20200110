@@ -1,0 +1,9 @@
+curl --location --request POST 'https://integration-uat.vpbanks.com.vn/gateway/account/internal/v1/contract/existence' \
+--header 'X-Request-Product-Code: EKASH' \
+--header 'X-Request-Timestamp: 2024-04-03T16:46:00' \
+--header 'Authorization: Bearer  {{token}}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "payload": "test",
+    "signature": "test"
+}'
