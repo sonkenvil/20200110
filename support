@@ -1,3 +1,21 @@
-input : 236541236_2024-04-05T10:04:12
+    public static String signature(String privateKeyStr, String message, String algorithm) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+        Signature sign = Signature.getInstance(StringUtils.isEmpty(algorithm) ? "SHA256withRSA" : algorithm);
+        PrivateKey privateKey = getPrivateKeyFromString(privateKeyStr);
+        sign.initSign(privateKey);
+        sign.update(message.getBytes(StandardCharsets.UTF_8));
+        return new String(Base64.encodeBase64(sign.sign()));
+    }
 
-"signature":"mM3XyyCaWOO0DKQmfOk8VlMxp6tM0WmCG9cAGMN8djI5C0SuHHOGiY2SGqnvsdFGm1mu6o/eS+ypcOcnnDk71eyDkBQ3OnG6PMk+fUg7EvzQEG07/ZD30Rbu0cWN5kdBv4krTuMN4nzcJmC+4R+ooJnIKHM20KUmVBkVwy7Sy9pELo1pLjr6iX/u4WhMsP3uyLmbE7STmNDnqR4nBSWPcneWzDewD1rCStqi7sPzA0K8iHOqoNtq4l7s/8eNTZ7uBE4h300I0ZR1F5F8LTGZP0pjXx+8Gxc91P6VaJVmzO+GvwOsSDCBzCtKurcAVrbEHHqAbImgtIy3Fwe70QYLOQ=="
+
+    private static boolean verifySignature(PublicKey publicKey, String signature, String message, String algorithm) {
+        boolean bResult = false;
+        try {
+            Signature verifyAlgorithm = Signature.getInstance(StringUtils.isEmpty(algorithm) ? "SHA256withRSA" : algorithm);
+            verifyAlgorithm.initVerify(publicKey);
+            verifyAlgorithm.update(message.getBytes(StandardCharsets.UTF_8));
+            bResult = verifyAlgorithm.verify(Base64.decodeBase64(signature));
+        } catch (Exception ex) {
+            log.error("[Encryption][RsaUtil][verifySignature][ERROR]ex: {}", ex.getMessage());
+        }
+        return bResult;
+    }
