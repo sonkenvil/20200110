@@ -1,9 +1,3 @@
-curl --location --request POST 'https://integration-uat.vpbanks.com.vn/gateway/account/internal/v1/contract/existence' \
---header 'X-Request-Product-Code: EKASH' \
---header 'X-Request-Timestamp: 2024-04-03T16:46:00' \
---header 'Authorization: Bearer  {{token}}' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "payload": "test",
-    "signature": "test"
-}'
+input : 236541236_2024-04-05T10:04:12
+
+"signature":"mM3XyyCaWOO0DKQmfOk8VlMxp6tM0WmCG9cAGMN8djI5C0SuHHOGiY2SGqnvsdFGm1mu6o/eS+ypcOcnnDk71eyDkBQ3OnG6PMk+fUg7EvzQEG07/ZD30Rbu0cWN5kdBv4krTuMN4nzcJmC+4R+ooJnIKHM20KUmVBkVwy7Sy9pELo1pLjr6iX/u4WhMsP3uyLmbE7STmNDnqR4nBSWPcneWzDewD1rCStqi7sPzA0K8iHOqoNtq4l7s/8eNTZ7uBE4h300I0ZR1F5F8LTGZP0pjXx+8Gxc91P6VaJVmzO+GvwOsSDCBzCtKurcAVrbEHHqAbImgtIy3Fwe70QYLOQ=="
