@@ -1,3 +1,1 @@
-H+Q9LlQCqU/p9lIyhm/MncfG5uYr1VAt7NBJcjj1oWm5LUYpSODFmwIulxjsSHWURGZLnRMsuqiyekxi6KUJG7NOzbPb1uhwCmeMsG+PDhOBydbzHdTV1avNAV8Z1d5sF8uiJOqbfaT2UMii/Ybgp1u99YoJty9dgV2csFGbQUz5esSzXJUk82DGprYy1mkItgG75BHhsXhBaDIjM1MT5xPTL3Ml1BCL3xOash2URXEaZlcLwQ0J1IikYBRirkaQbGh5AWUnp6bB/0Feg4lPnHWyhGyiKg2cK2f6pnD1iMXk+RwURrGm3Pp5CLkZ6kDTPb0vdkjNQSuDhkwIdRFsOQ==
-
-236541236_2024-04-08T10:38:55
+response contract with legalId: 236541236, data :{"status":0,"code":"GW500","message":"class java.util.LinkedHashMap cannot be cast to class vn.com.vpbanks.apigatewayservice.dto.response.ContractCreateResponse (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; vn.com.vpbanks.apigatewayservice.dto.response.ContractCreateResponse is in unnamed module of loader org.springframework.boot.loader.LaunchedURLClassLoader @25f38edc)","timestamp":null,"signature":null,"data":null}
