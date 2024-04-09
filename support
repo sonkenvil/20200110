@@ -1,1 +1,1 @@
-response contract with legalId: 236541236, data :{"status":0,"code":"GW500","message":"class java.util.LinkedHashMap cannot be cast to class vn.com.vpbanks.apigatewayservice.dto.response.ContractCreateResponse (java.util.LinkedHashMap is in module java.base of loader 'bootstrap'; vn.com.vpbanks.apigatewayservice.dto.response.ContractCreateResponse is in unnamed module of loader org.springframework.boot.loader.LaunchedURLClassLoader @25f38edc)","timestamp":null,"signature":null,"data":null}
+vpbank@zip#uat
