@@ -1,1 +1,3 @@
 message: block()/blockFirst()/blockLast() are blocking, which is not supported in thread reactor-http-epoll-1
+
+https://stackoverflow.com/questions/77360338/spring-webclient-interceptor-in-synchronous-mode
