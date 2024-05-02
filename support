@@ -1,11 +1,6 @@
-message: block()/blockFirst()/blockLast() are blocking, which is not supported in thread reactor-http-epoll-1
-
-https://stackoverflow.com/questions/77360338/spring-webclient-interceptor-in-synchronous-mode
-
-
-https://stackoverflow.com/questions/51449889/block-blockfirst-blocklast-are-blocking-error-when-calling-bodytomono-afte
-
-
-https://stackoverflow.com/questions/64650820/spring-webflux-5-3-0-webclient-exchangetomono
-
-https://stackoverflow.com/questions/76698733/java-lang-illegalstateexception-block-blockfirst-blocklast-are-blocking
+NGUYEN MAI PHUONG
+Legal: 001196037223
+SDT: 0357535712
+cif: 8986195
+ACC: 313154327
+NEO: vpneo32/Vpbank@2024
