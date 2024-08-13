@@ -1,6 +1,1 @@
-1. API kiểm tra điều kiện đăng ký ủy quyền
-	* TH trả về SUCCESS tại sao lại không bao gồm TH 3(Tài khoản chứng khoán tồn tại, key ủy quyền không tồn tại)
-	* 2 trường partnerCusAccount, stockAccount trong response trả về sở dĩ có thêm bởi vì luồng liên kết ủy quyền từ VPBankS -> VPBankS đang truyền vào trường partnerCusAccount: 116C910686(example) nên luồng liên từ NEO cũng muốn đồng nhất
-	* delegationId trong response sẽ bao gồm cả TH KH chưa tồn tại liên kết để sinh theo rule của VPBankS mong muốn, nếu TH SUCESS mà VPBankS không trả về thì VPBank sẽ sinh theo rule của VPBank
-	
-2. API đăng ký ủy quyền (Mục đích là KH thực hiện đăng ký liên kết thành công xong sẽ báo sang bên VPBankS) nên response delegationId không bỏ được
+RSA_MODE = "RSA/ECB/OAEPWITHSHA-256ANDMGF1PADDING";
