@@ -1,1 +1,3 @@
-RSA_MODE = "RSA/ECB/OAEPWITHSHA-256ANDMGF1PADDING";
+Wed Aug 14 2024 11:19:46 [0x80e00625][mpgw][error] mpgw(ForwardNonXMLSync2MPG): tid(1375600080)[10.39.164.167] gtid(f6e74d4966bc221351fdfdd0): Connect to URL '
+https://uat-gateway-vpb.tingee.vn/webhook-balance-changes'
+timed out
