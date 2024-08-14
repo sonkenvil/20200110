@@ -1,2 +1,6 @@
-ava.security.spec.InvalidKeySpecException: java.security.InvalidKeyException: IOException: ObjectIdentifier() -- data isn't an object ID (tag = -96)
-at sun.security.rsa.RSAKeyFactory.engineGeneratePublic(RSAKeyFactory.java:205)
+Wed Aug 14 2024 12:09:09 [0x80c0003f][all][notice] mpgw(ForwardNonXMLSync2MPG): tid(634911155)[request][10.39.164.167] gtid(f6e74d4966bc2de525d7f9b3): ew0KICAgICJyZXF1ZXN0SWQiOiAiMjAyNDA4MTQxMTA5IiwNCiAgICAiYWNjb3VudE51bWJlciI6ICIxMjM0NTYiLA0KICAgICJhbW91bnQiOiAiMTIzNDU2IiwNCiAgICAiY3VycmVuY3kiOiAiVk5EIiwNCiAgICAiZGF0ZVRpbWUiOiAidGVzdCIsDQogICAgIm5ld01lbW8iOiAiMTIzNDU2IiwNCiAgICAidHJhbnNhY3Rpb25JZCI6ICJGVDEyMzQ1NiINCn0=
+Wed Aug 14 2024 12:09:09 [0x80e0012c][mpgw][error] mpgw(ForwardNonXMLSync2MPG): tid(634911155)[10.39.164.167] gtid(f6e74d4966bc2de525d7f9b3): Network Error on back side server https://uat-gateway-vpb.tingee.vn/webhook-balance-changes
+Wed Aug 14 2024 12:09:09 [0x80e006c1][mpgw][error] mpgw(ForwardNonXMLSync2MPG): tid(634911155)[10.39.164.167] gtid(f6e74d4966bc2de525d7f9b3): Error in stream. Descriptor number unavailable. Additional information: Write error (8)
+ 
+Wed Aug 14 2024 12:09:09 [0x80000001][xsltmsg][notice] mpgw(ForwardNonXMLSync2MPG): tid(634911155)[request][10.39.164.167] gtid(f6e74d4966bc2de525d7f9b3): URL-In: http://10.37.16.151:8142/vpb-tingee/webhook-balance-changes URL-out: https://uat-gateway-vpb.tingee.vn/webhook-balance-changes
+ 
