@@ -1,1 +1,7 @@
-https://devvpbankbe.vnlink.vn/v1/vpbank/get_payment
+API đăng nhập domain integration
+Domain Internal	http://einvest-account-openapi 
+
+Domain Partner	https://intergration.vpbank.com.vn
+
+
+
