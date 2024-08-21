@@ -1,7 +1,28 @@
-API đăng nhập domain integration
-Domain Internal	http://einvest-account-openapi 
-
-Domain Partner	https://intergration.vpbank.com.vn
-
-
-
+    public static String decryptWithPrivateKey(String inputStr, String key) throws Exception {
+        PrivateKey privateKey = RsaUtil.getPrivateKeyFromString(key);
+        Cipher cipher = Cipher.getInstance(RSA_MODE, new BouncyCastleProvider());
+        cipher.init(Cipher.DECRYPT_MODE, privateKey);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        byte[] base64EncodedData = inputStr.getBytes(StandardCharsets.UTF_8);
+        byte[] encryptedDataBase64 = java.util.Base64.getDecoder().decode(base64EncodedData);
+        int payloadLength = encryptedDataBase64.length;
+        int blockSize = cipher.getBlockSize();
+        int start = 0, end = 0;
+        while (start < payloadLength) {
+            end = end + blockSize;
+            if (end > payloadLength) {
+                end = payloadLength;
+            }
+            try {
+                byte[] decryptedBlockData = cipher.doFinal(encryptedDataBase64, start, (end - start));
+                stream.write(decryptedBlockData);
+                start = end;
+            } catch (Exception ex) {
+                log.error("[RsaUtil][decryptWithPrivateKey][Exception]Ex: {} ", ex.getMessage());
+                break;
+            }
+        }
+        String payload = stream.toString();
+        stream.close();
+        return payload;
+    }
