@@ -1,1 +1,72 @@
-116C135667 = sMMCtsNHombFVzTbyxzOFg==
+public abstract class AESEncryption {
+
+    static private final String ENCODING = "UTF-8";
+    static private final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
+    static private final String AES = "AES";
+
+    public static String encrypt(String strToEncrypt, String key) {
+        String strEncrypted = "error_encrypted";
+        byte[] strEncryptedbyte = null;
+        byte[] keyByte = null;
+        Cipher cp;
+        SecretKeySpec sks = null;
+        IvParameterSpec ips = null;
+        try {
+            strEncryptedbyte = strToEncrypt.getBytes(ENCODING);
+            keyByte = getKeyBytes(key);
+        } catch (NullPointerException | UnsupportedEncodingException e) {
+            log.debug("[AESEncryption] encrypt getBytes error: {}", e.getMessage());
+            return strEncrypted;
+        }
+
+        sks = new SecretKeySpec(keyByte, AES);
+        ips = new IvParameterSpec(keyByte);
+
+        try {
+            cp = Cipher.getInstance(TRANSFORMATION);
+            cp.init(Cipher.ENCRYPT_MODE, sks, ips);
+            strEncryptedbyte = cp.doFinal(strEncryptedbyte);
+            strEncrypted = new String(Base64.encodeBase64(strEncryptedbyte));
+            return strEncrypted;
+        } catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | InvalidAlgorithmParameterException | IllegalBlockSizeException | BadPaddingException e) {
+            log.debug("[AESEncryption] encrypt error: {}", e.getMessage());
+            return strEncrypted;
+        }
+    }
+
+    public static String decrypt(String strToDecrypt, String key) {
+        String strDecrypted = "error_decrypted";
+        byte[] strEncryptedByte;
+        byte[] keyByte;
+        try {
+            strEncryptedByte = Base64.decodeBase64(strToDecrypt.getBytes(StandardCharsets.UTF_8));
+            keyByte = getKeyBytes(key);
+        } catch (NullPointerException e) {
+            log.debug("[AESEncryption] Base64 decode error: {}", e.getMessage());
+            return strDecrypted;
+        }
+        SecretKeySpec sks = new SecretKeySpec(keyByte, AES);
+        IvParameterSpec ips = new IvParameterSpec(keyByte);
+        try {
+            Cipher cp = Cipher.getInstance(TRANSFORMATION);
+            cp.init(Cipher.DECRYPT_MODE, sks, ips);
+            strEncryptedByte = cp.doFinal(strEncryptedByte);
+            strDecrypted = new String(strEncryptedByte, ENCODING);
+            return strDecrypted;
+        } catch (UnsupportedEncodingException | InvalidAlgorithmParameterException | InvalidKeyException | NoSuchAlgorithmException | BadPaddingException | IllegalBlockSizeException | NoSuchPaddingException e) {
+            log.debug("[AESEncryption] decrypt error: {}", e.getMessage());
+            return strDecrypted;
+        }
+    }
+
+    private static byte[] getKeyBytes(String key) {
+        byte[] keyBytes = new byte[16];
+        try {
+            byte[] parameterKeyBytes = key.getBytes(ENCODING);
+            System.arraycopy(parameterKeyBytes, 0, keyBytes, 0, Math.min(parameterKeyBytes.length, keyBytes.length));
+        } catch (UnsupportedEncodingException e) {
+            log.debug("[AESEncryption] getKeyBytes error: {}", e.getMessage());
+        }
+        return keyBytes;
+    }
+}
