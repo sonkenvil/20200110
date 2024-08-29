@@ -1,5 +1,2 @@
-NEO: 0388827799/Longchau@12345
-  "customerName": "BUI TIEN THUONG",
-  "accountNumber":"313726673",
-  "legalId": "030098001339",
- 
+token nạp tiền bond: huWsUIFhXnTzofyrVCMcE7ysDTEa/XB7tsLxR7vrltmg6QVgROWTZfrMa
+token nạp tiền fund: nBk3VhLK6fzOfn2Z_OI1Ce77Wgka/LHZlJrAdHkKJU5gKPjq_SzFhruEa
