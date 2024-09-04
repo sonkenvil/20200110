@@ -1,2 +1,4 @@
-IP: 172.19.10.6 port 80 443
-Domain: https://integration-uat.vpbanks.com.vn
+curl --location --request POST 'https://uat-ob-gatewaylb-int.vpbank.com.vn/security/v1/token' \
+--header 'Authorization: Basic aHVXc1VJRmhYblR6b2Z5clZDTWNFN3lzRFRFYTpYQjd0c0x4Ujd2cmx0bWc2UVZnUk9XVFpmck1h' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data-urlencode 'grant_type=client_credentials'
