@@ -1,4 +1,1 @@
-curl --location --request POST 'https://uat-ob-gatewaylb-int.vpbank.com.vn/security/v1/token' \
---header 'Authorization: Basic aHVXc1VJRmhYblR6b2Z5clZDTWNFN3lzRFRFYTpYQjd0c0x4Ujd2cmx0bWc2UVZnUk9XVFpmck1h' \
---header 'Content-Type: application/x-www-form-urlencoded' \
---data-urlencode 'grant_type=client_credentials'
+vpbankUatVpo/VpbankVPO2@24
