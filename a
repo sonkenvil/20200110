@@ -1,1 +1,107 @@
-https://docs.google.com/spreadsheets/d/1HEECrGdjVs7Z6lfVObhy5mHMjPCIAyHH/edit?usp=drive_link&ouid=112521772241672953060&rtpof=true&sd=true
+    public String signature(String partnerCode, String message, String algorithm) {
+        try {
+            SignatureKey key = getKeyByPartnerCode(partnerCode);
+            if (key == null) {
+                return null;
+            }
+            return RsaUtil.signature(key.getKey(), message, algorithm);
+        } catch (Exception ex) {
+            log.error("[Encryption][RsaService][signature][Exception] ex: {}", ex.getMessage());
+        }
+        return null;
+    }
+
+    public boolean verify(String partnerCode, String signature, String message) {
+        try {
+            SignatureKey key = getKeyByPartnerCode(partnerCode);
+            if (key == null) {
+                return false;
+            }
+            return RsaUtil.verifySignature(key.getKey(), signature, message, key.getFileName());
+        } catch (Exception ex) {
+            log.error("[Encryption][RsaService][verify][Exception] ex: {}", ex.getMessage());
+        }
+        return false;
+    }
+
+
+
+
+Class RsaUtil {
+
+    public static String signature(String privateKeyStr, String message, String algorithm) throws NoSuchAlgorithmException, InvalidKeyException, SignatureException {
+        Signature sign = Signature.getInstance(StringUtils.isEmpty(algorithm) ? "SHA256withRSA" : algorithm);
+        PrivateKey privateKey = getPrivateKeyFromString(privateKeyStr);
+        sign.initSign(privateKey);
+        sign.update(message.getBytes(StandardCharsets.UTF_8));
+        return new String(Base64.encodeBase64(sign.sign()));
+    }
+
+    public static boolean verifySignature(String key, String signature, String message, String fileName) {
+        PublicKey publicKey = null;
+        if (fileName.endsWith(".cer") || fileName.endsWith(".crt")) {
+            publicKey = getPublicKeyFromCertString(key);
+        } else {
+            publicKey = getPublicKeyFromString(key);
+        }
+        return verifySignature(publicKey, signature, message, null);
+    }
+
+    private static boolean verifySignature(PublicKey publicKey, String signature, String message, String algorithm) {
+        boolean bResult = false;
+        try {
+            Signature verifyAlgorithm = Signature.getInstance(StringUtils.isEmpty(algorithm) ? "SHA256withRSA" : algorithm);
+            verifyAlgorithm.initVerify(publicKey);
+            verifyAlgorithm.update(message.getBytes(StandardCharsets.UTF_8));
+            bResult = verifyAlgorithm.verify(Base64.decodeBase64(signature));
+        } catch (Exception ex) {
+            log.error("[Encryption][RsaUtil][verifySignature][ERROR]ex: {}", ex.getMessage());
+        }
+        return bResult;
+    }
+
+    public static PublicKey getPublicKeyFromCertString(String certString) {
+        PublicKey pubkey = null;
+        try {
+            ByteArrayInputStream arrayInput = new ByteArrayInputStream(certString.getBytes());
+            CertificateFactory factory = CertificateFactory.getInstance("X.509");
+            X509Certificate certificate = (X509Certificate) factory.generateCertificate(arrayInput);
+            pubkey = certificate.getPublicKey();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return pubkey;
+    }
+
+    public static PublicKey getPublicKeyFromString(String pubKeyStr) {
+
+        PublicKey pubKey = null;
+
+        try {
+            InputStream is = new ByteArrayInputStream(pubKeyStr.getBytes());
+            BufferedReader br = new BufferedReader(new InputStreamReader(is));
+            StringBuilder builder = new StringBuilder();
+            for (String line = br.readLine(); line != null; line = br.readLine()) {
+                if (line.contains("-----BEGIN ")) {
+                    continue;
+                }
+                if (line.contains("-----END ")) {
+                    break;
+                }
+                if (StringUtils.isNotEmpty(line)) {
+                    builder.append(line);
+                }
+            }
+
+            byte[] encoded = Base64.decodeBase64(builder.toString());
+            KeySpec keySpec = new X509EncodedKeySpec(encoded);
+            KeyFactory kf = KeyFactory.getInstance("RSA");
+            pubKey = kf.generatePublic(keySpec);
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        return pubKey;
+    }
+}
