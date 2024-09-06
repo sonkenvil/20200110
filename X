@@ -1,1 +1,94 @@
-https://wealth-uat.vpbanks.com.vn/
+    public String encryptV1(String partnerCode, String message) {
+        try {
+            SignatureKey key = getKeyByPartnerCode(partnerCode);
+            if (key == null) {
+                return null;
+            }
+            return RsaUtil.encryptWithPublicKeyV1(message, key.getKey(), key.getFileName());
+        } catch (Exception ex) {
+            log.error("[Encryption][RsaService][encrypt][Exception] ex: {}", ex.getMessage());
+        }
+        return null;
+    }
+
+public String decryptV1(String partnerCode, String message) {
+        try {
+            SignatureKey key = getKeyByPartnerCode(partnerCode);
+            if (key == null) {
+                return null;
+            }
+            return RsaUtil.decryptWithPrivateKeyV1(message, key.getKey());
+        } catch (Exception ex) {
+            log.error("[Encryption][RsaService][decrypt][Exception] ex: {}", ex.getMessage());
+        }
+        return null;
+    }
+
+
+class RsaUtil {
+
+  public static String encryptWithPublicKeyV1(String inputStr, String key, String fileName) throws Exception {
+        PublicKey publicKey = null;
+        if (fileName.endsWith(".cer") || fileName.endsWith(".crt")) {
+            publicKey = getPublicKeyFromCertString(key);
+        } else {
+            publicKey = getPublicKeyFromString(key);
+        }
+        byte[] payload = inputStr.getBytes(StandardCharsets.UTF_8);
+        int payloadLength = payload.length;
+        Cipher cipher = Cipher.getInstance(RSA_MODE, new BouncyCastleProvider());
+        cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+        int blockSize = cipher.getBlockSize();
+
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        int start = 0, end = 0;
+        while (end < payloadLength) {
+            end = end + blockSize;
+            if (end > payloadLength) {
+                end = payloadLength;
+            }
+            try {
+                byte[] encryptedSlice = cipher.doFinal(payload, start, (end - start));
+                stream.write(encryptedSlice);
+                start = end;
+            } catch (Exception ex) {
+                log.error("[RsaUtil][encryptWithPublicKey][Exception]Ex: {} ", ex.getMessage());
+                break;
+            }
+        }
+        byte[] encryptedPayload = stream.toByteArray();
+        stream.close();
+        byte[] base64EncryptedPayload = Base64.encodeBase64(encryptedPayload);
+        return new String(base64EncryptedPayload);
+    }
+
+   public static String decryptWithPrivateKeyV1(String inputStr, String key) throws Exception {
+        PrivateKey privateKey = RsaUtil.getPrivateKeyFromString(key);
+        Cipher cipher = Cipher.getInstance(RSA_MODE, new BouncyCastleProvider());
+        cipher.init(Cipher.DECRYPT_MODE, privateKey);
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        byte[] base64EncodedData = inputStr.getBytes(StandardCharsets.UTF_8);
+        byte[] encryptedDataBase64 = java.util.Base64.getDecoder().decode(base64EncodedData);
+        int payloadLength = encryptedDataBase64.length;
+        int blockSize = cipher.getBlockSize();
+        int start = 0, end = 0;
+        while (start < payloadLength) {
+            end = end + blockSize;
+            if (end > payloadLength) {
+                end = payloadLength;
+            }
+            try {
+                byte[] decryptedBlockData = cipher.doFinal(encryptedDataBase64, start, (end - start));
+                stream.write(decryptedBlockData);
+                start = end;
+            } catch (Exception ex) {
+                log.error("[RsaUtil][decryptWithPrivateKey][Exception]Ex: {} ", ex.getMessage());
+                break;
+            }
+        }
+        String payload = stream.toString();
+        stream.close();
+        return payload;
+    }
+
+}
