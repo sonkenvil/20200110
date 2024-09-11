@@ -1,48 +1,25 @@
-{
-  "ownerIsDriver": false,
-  "hasBankLoan": false,
-  "effectiveDate": "12-09-2024",
-  "duration": "12",
-  "effectiveDateTpl": null,
-  "durationTpl": null,
-  "hasTplBundle": false,
-  "sumInsurance": 875000000,
-  "businessUsing": "commercial",
-  "vehicleType": "car",
-  "vehiclePlateNo": "111ACB",
-  "vehicleEngineNo": null,
-  "vehicleCC": null,
-  "vehicleBrandCode": "toyota",
-  "vehicleBrand": "Toyota",
-  "vehicleLineCode": "toyota.camry",
-  "vehicleLine": "Camry",
-  "vehicleSpecCode": "2_0g",
-  "vehicleSpec": "2",
-  "vehicleYear": "2022",
-  "vehicleSeatCount": 5,
-  "vehicleColor": null,
-  "vehicleChassisNo": null,
-  "vehicleValue": 960000000,
-  "estCarValue": 960000000,
-  "activeRegionProvinceCode": "01",
-  "activeRegionProvince": "Ha noi",
-  "ownerName": "VU THI HOA",
-  "deductibleExcess": 1000000,
-  "pkgCode": null,
-  "driverExperience": 1,
-  "driverYearOfBirth": 1991,
-  "driverFullName": null,
-  "driverPhone": null,
-  "expireDate": "10-12-2025",
-  "vehicleWeight": 0,
-  "buyerId": "040189038152",
-  "buyerName": "NGUYEN THI NGOC TU",
-  "buyerPhone": "0985854238",
-  "buyerEmail": "test02@testdev.vpb.com.vn",
-  "buyerAddress": "Xom 4 Xa Nam Giang Huyen Nam Dan Nghe An",
-  "buyerIsCompany": false
-}
-
+-----BEGIN CERTIFICATE-----
+MIIDtzCCAp+gAwIBAgIUOQ0ERdkH3AkFy63tEDSSA0qj+mswDQYJKoZIhvcNAQEL
+BQAwajELMAkGA1UEBhMCVk4xCzAJBgNVBAgMAkhOMQswCQYDVQQHDAJITjEQMA4G
+A1UECgwHVlBCYW5rUzERMA8GA1UECwwIUGxhdGZvcm0xHDAaBgNVBAMME2Nhc2gu
+dnBiYW5rcy5jb20udm4wIBcNMjQwODEzMTEzNjUxWhgPMjEyNDA3MjAxMTM2NTFa
+MGoxCzAJBgNVBAYTAlZOMQswCQYDVQQIDAJITjELMAkGA1UEBwwCSE4xEDAOBgNV
+BAoMB1ZQQmFua1MxETAPBgNVBAsMCFBsYXRmb3JtMRwwGgYDVQQDDBNjYXNoLnZw
+YmFua3MuY29tLnZuMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkHzO
+CeuA6Mzp6zUKcInYTqtpBSeH7FgnTp84xnIPnSZPgSlToYJCKBt/T5A/NhlH78sh
+L7S8S2lj4MAOeQSY/yY7/EwHT9PMiKRbm2k80lh0r2ZPPOxwoZu0ccrvO8Zygw1k
+6DYUNzJ2nhK6l7JimjYDfv8YvAp/l3Jt8EEIIyXFN7sd/KbwPHaHZBEd5UKNCd+7
+Sn7Ux4+TsiTLuvaX25yikN12/6ZAKWDjXtZscYjhv+v45tEd/F5b0o5Dy8uNq2QE
+v3BHpi9GnwdwVrkELNPfdEAxoU8XgVbjFCHMmTySV6yHCF+MRfXz32o645T9npYt
+VPPLCjdM2mzByijkfwIDAQABo1MwUTAdBgNVHQ4EFgQUkAEnA+dWSf+WOfrRpUfb
+UWtW4iEwHwYDVR0jBBgwFoAUkAEnA+dWSf+WOfrRpUfbUWtW4iEwDwYDVR0TAQH/
+BAUwAwEB/zANBgkqhkiG9w0BAQsFAAOCAQEALw+RGJu8rIK5w+PW8c8vKmvX6okH
+mS0HFQwrcdxjnyCGWQ26lLr4vqzkomH0ECeKw1d2lgTB7EqoUFmCaaWIfiKbhMgN
+ursMxvqzdHOfTmE+Ksoxc4dA77fNVoPZK01NOCHj0BLs+qRSfOxxKB5vzXS4vI2L
+MeiKShrHIJ8EUyG0OOXtBCrVyD3FxOuwb6Y8aijELW+zs+N62TYj/Ex+dOekcDvE
+AXWw4ucitNHuqpsECVZHNC2zeQ6rK6gb3pM+Qwls902Kub2anGIQl+3UOP0HYWwF
+qKquywKrBAaddVNbrFgq7Bo+YAf0Nuz6ahjv1tZncmLfkMucsg2cEqGM+Q==
+-----END CERTIFICATE-----
 
 
 
