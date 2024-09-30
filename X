@@ -1,18 +1,52 @@
-request 116: 
- getWebView requestId: 6377fdd1-7b82-40bb-a696-30f6c0a6babc, data:{"cif":"14525146","legalId":"022203006275","fullName":"DAM QUANG MANH","productCode":"BOND"}, timestampRequest:2024-09-27T17:26:27
-getWebview error, ex:500 Internal Server Error: "<?xml version='1.0' ?><EOL><env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'><EOL><env:Body><EOL><env:Fault><EOL><faultcode>env:Client</faultcode><EOL><faultstring>Internal Error</faultstring><EOL></env:Fault><EOL></env:Body><EOL></env:Envelope><EOL>", x-request-id: 6377fdd1-7b82-40bb-a696-30f6c0a6babc
+Rsa Service {
 
-request : 117
-getWebView requestId: cfc643c2-7dbc-484f-bdd0-7119f4eb98e5, data:{"cif":"14525146","legalId":"022203006275","fullName":"DAM QUANG MANH","productCode":"BOND"}, timestampRequest:2024-09-27T17:26:57
-getWebview error, ex:500 Internal Server Error: "<?xml version='1.0' ?><EOL><env:Envelope xmlns:env='http://schemas.xmlsoap.org/soap/envelope/'><EOL><env:Body><EOL><env:Fault><EOL><faultcode>env:Client</faultcode><EOL><faultstring>Internal Error</faultstring><EOL></env:Fault><EOL></env:Body><EOL></env:Envelope><EOL>", x-request-id: cfc643c2-7dbc-484f-bdd0-7119f4eb98e5
+    public String encrypt(String partnerCode, String message) {
+        try {
+            SignatureKey key = getKeyByPartnerCode(partnerCode);
+            if (key == null) {
+                return null;
+            }
+            return RsaUtil.encryptWithPublicKey(message, key.getKey(), key.getFileName());
+        } catch (Exception ex) {
+            log.error("[Encryption][RsaService][encrypt][Exception] ex: {}", ex.getMessage());
+        }
+        return null;
+    }
 
+    public String decrypt(String partnerCode, String message) {
+        try {
+            SignatureKey key = getKeyByPartnerCode(partnerCode);
+            if (key == null) {
+                return null;
+            }
+            return RsaUtil.decryptWithPrivateKey(message, key.getKey());
+        } catch (Exception ex) {
+            log.error("[Encryption][RsaService][decrypt][Exception] ex: {}", ex.getMessage());
+        }
+        return null;
+    }
+}
 
+RsaUtil {
+    public static String encryptWithPublicKey(String inputStr, String key, String fileName) throws Exception {
+        PublicKey publicKey = null;
+        if (fileName.endsWith(".cer") || fileName.endsWith(".crt")) {
+            publicKey = getPublicKeyFromCertString(key);
+        } else {
+            publicKey = getPublicKeyFromString(key);
+        }
+        Cipher cipher = Cipher.getInstance(RSA_MODE);
+        cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+        byte[] bytes = cipher.doFinal(inputStr.getBytes(StandardCharsets.UTF_8));
+        return new String(Base64.encodeBase64(bytes));
+    }
 
+    public static String decryptWithPrivateKey(String inputStr, String key) throws Exception {
+        PrivateKey privateKey = getPrivateKeyFromString(key);
+        Cipher cipher = Cipher.getInstance(RSA_MODE);
+        cipher.init(Cipher.DECRYPT_MODE, privateKey);
+        byte[] bytes = cipher.doFinal(Base64.decodeBase64(inputStr));
+        return new String(bytes);
+    }
 
-
-
-request 120: thì bắt đầu lỗi
-[REQUEST][yLsOzuqS]{"sourceAppIp":"0:0:0:0:0:0:0:1","destAppIp":"0:0:0:0:0:0:0:1","destAppPort":8080,"httpPath":"/vpbanks/webview","httpMethod":"POST","httpStatus":0,"header":{"x-request-id":"914be73c-e67f-4d47-a432-53a1b82e6325","content-length":"100","postman-token":"fb8efcfb-a83a-4b7a-a753-4ba97ed51271","host":"localhost:8080","content-type":"application/json","connection":"keep-alive","accept-encoding":"gzip, deflate, br","accept":"*/*","user-agent":"PostmanRuntime/7.29.2"},"body":{"cif":"14525146","legalId":"022203006275","fullName":"DAM QUANG MANH","productCode":"BOND"}}
- getWebView requestId: 914be73c-e67f-4d47-a432-53a1b82e6325, data:{"cif":"14525146","legalId":"022203006275","fullName":"DAM QUANG MANH","productCode":"BOND"}, timestampRequest:2024-09-27T17:29:30
- response getWebView requestId: 914be73c-e67f-4d47-a432-53a1b82e6325, response: {"code":null,"message":"failure to get a peer from the ring-balancer","status":null,"timestamp":null,"signature":null,"data":null}
-
+}
