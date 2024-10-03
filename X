@@ -1,3 +1,1 @@
-sessionId=ac36c369-46e3-4458-8c11-be2c37e93c97 ===> "{\"code\":\"101500\",\"type\":\"Status report\",\"message\":\"Runtime Error\",\"description\":\"Error in Sender\"}" | Error to https://uat-ob-gatewaylb-int.vpbank.com.vn:443/statement-sdlink/v1/callback/transaction/notify
-callbackNotiDataToPartner] case partnerId=SDLink
-[listenerTopic] messageKey=ac36c369-46e3-4458-8c11-be2c37e93c97 send to partner=SDLink isSend=false
+Trong quá trình test UAT, VPBankS phát hiện có rủi ro liên quan đến mã hóa key ủy quyền, hiện nay đang ảnh hưởng đến luồng ghi nhận hợp đồng trên CBMS.
