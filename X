@@ -1,1 +1,1 @@
-Trong quá trình test UAT, VPBankS phát hiện có rủi ro liên quan đến mã hóa key ủy quyền, hiện nay đang ảnh hưởng đến luồng ghi nhận hợp đồng trên CBMS.
+{"timestamp":"2024-10-04T09:14:18.785Z","status":422,"error":"T24 ERROR","message":"DEBIT.ACCT.NO:1:1=Tong so tien ghi no da vuot qua han muc cho phep 100,000,000/thang doi voi tk EKYC"
