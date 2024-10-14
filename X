@@ -1,1 +1,1 @@
-{"timestamp":"2024-10-04T09:14:18.785Z","status":422,"error":"T24 ERROR","message":"DEBIT.ACCT.NO:1:1=Tong so tien ghi no da vuot qua han muc cho phep 100,000,000/thang doi voi tk EKYC"
+VPB116C963152984c2d9c-e5c2-4dab-adb6-560a97d5ee15
