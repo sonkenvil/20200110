@@ -1,1 +1,1 @@
-CommonDelegation register delegation error requestId: us2ocbapp02_4eccf546c35846d7a5ad841626f973db, response: {"code":"CABERR009417","message":"Tài khoản đã được đăng kí liên kết"}
+checkCustomer requestId: us2ocbapp02_5f7f88d55a194f6695d96ea24b03ca31, response: {"code":"ACCOUNT_NOT_FOUND","message":"Thông tin giấy tờ không trùng khớp","data":{"delegationId":null,"customerName":null,"partnerCusAccount":null,"stockAccount":null}}
